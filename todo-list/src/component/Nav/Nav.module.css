@@ -1,0 +1,33 @@
+.nav{
+    margin-top: 40px;
+}
+.nav__list {
+    display: flex;
+    justify-content: space-evenly;
+    /*align-items: center;*/
+    color: #ebebeb;
+}
+
+li {
+    margin: 10px;
+    width: 100px;
+    height: 130px;
+    border: 2px solid #fff;
+    overflow: hidden;
+}
+
+.list__item {
+    text-align: center;
+    border-bottom: #ebebeb 2px solid;
+    /*border:  #fff solid;*/
+}
+.list__question{
+    height: 80px;
+}
+li:hover{
+    width: 118px;
+    height: 155px;
+    border: 2px solid #fff;
+    margin: 0px 1px;
+
+}

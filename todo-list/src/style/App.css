@@ -1,0 +1,30 @@
+@import './nullStyle.css';
+
+body {
+    font-family: 'Staatliches', cursive;
+    font-size: 20px;
+    background: linear-gradient(to top, #91EAE4, #86A8E7, #7F7FD5);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+
+}
+
+.content {
+
+}
+
+.content__item {
+    display: flex;
+    max-width: 80vw;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.footer {
+    margin-top: auto;
+}
