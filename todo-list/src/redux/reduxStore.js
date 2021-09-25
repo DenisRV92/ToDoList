@@ -1,11 +1,11 @@
 import {combineReducers, createStore} from "redux";
 import reducerToDoList from "./reducerToDoList";
 
-let reducer = combineReducers({
+let reducers = combineReducers({
     doList: reducerToDoList,
 })
-let store = createStore(reducer)
-// window.store=store
-// debugger
-console.log(store)
+
+let store = createStore(reducers)
+window.store=store
+
 export default store;

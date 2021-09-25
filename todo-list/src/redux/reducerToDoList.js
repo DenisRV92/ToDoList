@@ -1,52 +1,31 @@
-import React from 'react';
+// import React from 'react';
 
 let initialState = {
     monday: [
-        {
-            url: '/monday',
-            doList:[{}]
-        }
+        {id: 1, url: '/monday',title:'',titleDay:'Monday'},
     ],
     tuesday: [
-        {
-            url: '/tuesday',
-            doList:[{}]
-        }
+        {id: 1, url: '/tuesday',title:'',titleDay:'Tuesday'},
     ],
     wednesday: [
-        {
-            url: '/wednesday',
-            doList:[{}]
-        }
+        {id: 1, url: '/wednesday',title:'',titleDay:'Wednesday'},
     ],
     thursday: [
-        {
-            url: '/thursday',
-            doList:[{}]
-        }
+        {id: 1, url: '/thursday',title:'',titleDay:'Thursday'},
     ],
     friday: [
-        {
-            url: '/friday',
-            doList:[{}]
-        }
+        {id: 1, url: '/friday',title:'',titleDay:'Friday'},
     ],
 
     saturday: [
-        {
-            url: '/saturday',
-            doList:[{}]
-        }
+        {id: 1, url: '/saturday',title:'',titleDay:'Saturday'},
     ],
     sunday: [
-        {
-            url: '/sunday',
-            doList:[{}]
-        }
+        {id: 1, url: '/sunday',title:'',titleDay:'Sunday'},
     ],
 }
 const reducerDoList = (state = initialState, action) => {
-    debugger
+
     return state
 };
 

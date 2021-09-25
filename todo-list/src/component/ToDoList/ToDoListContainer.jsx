@@ -1,7 +1,7 @@
-// import React from 'react';
+import React from 'react';
+import './ToDoList.module.css'
 import {connect} from "react-redux";
-import Nav from "./Nav";
-import Monday from "../day/Monday/Monday";
+import ToDoList from "./ToDoList";
 
 let mapStateToProps=(state)=>{
 
@@ -15,7 +15,5 @@ let mapStateToProps=(state)=>{
         sunday:state.doList.sunday
     }
 }
-
-const NavContainer=connect(mapStateToProps)(Nav)
-// connect(mapStateToProps)(Monday)
-export default NavContainer
+const ToDoListContainer=connect(mapStateToProps)(ToDoList)
+export default ToDoListContainer;
