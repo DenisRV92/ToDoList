@@ -1,35 +1,48 @@
 .nav{
-    margin-top: 40px;
+    margin-top: 20px;
     height: 250px;
-
+    font-size: 15px;
 }
 .nav__list {
     display: flex;
     justify-content: space-evenly;
     /*align-items: center;*/
     color: #ebebeb;
+
 }
 
 li {
     margin: 10px;
     width: 100px;
     height: 130px;
-    border: 2px solid #fff;
+    border: 1px solid white;
     overflow: hidden;
+    box-shadow: 0 0 1em black;
 }
 
 .list__item {
     text-align: center;
-    border-bottom: #ebebeb 2px solid;
+    /*border-bottom: #ebebeb 2px solid;*/
+    background: #5c83cc;
+    /*height: 25px;*/
+    font-size: 18px;
+    padding: 5px 0;
     /*border:  #fff solid;*/
 }
 .list__question{
+    padding: 0px 2px;
     height: 80px;
 }
 li:hover{
     width: 118px;
     height: 155px;
-    border: 2px solid #fff;
+    border: 1px solid #fff;
     margin: 0px 1px;
+    cursor: pointer;
+/*font-size: 22px;*/
+    /*font-size: 55px;*/
 
+}
+li:hover .list__item{
+    font-size: 22px;
 }

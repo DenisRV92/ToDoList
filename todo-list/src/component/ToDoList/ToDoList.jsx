@@ -1,9 +1,13 @@
 import React from 'react';
-import './Question.module.css'
+import './ToDoList.module.css'
 
-const Question = () => {
+const ToDoList = () => {
     return (
+
         <div className='list'>
+            <div className="list__header">
+                <span>ToDoList</span>
+            </div>
             <div className='list__addtodo'>
                 <input type="text"/>
                 <button>add</button>
@@ -12,10 +16,10 @@ const Question = () => {
                 sqsqs
             </div>
             <div className="list__button">
-                qsqsqsqs
+               <button>Clear</button>
             </div>
         </div>
     );
 };
 
-export default Question;
+export default ToDoList;

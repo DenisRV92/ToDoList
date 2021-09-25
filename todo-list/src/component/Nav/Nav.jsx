@@ -1,8 +1,10 @@
 import React from 'react';
 import './Nav.module.css'
 
-const Nav = () => {
+const Nav = (props) => {
+console.log(props)
     return (
+
         <div className='nav'>
             <ul className='nav__list'>
                 <li>

@@ -1,0 +1,59 @@
+.list {
+/*border: black 0.5px solid;*/
+    width: 25%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    box-shadow: 0 0 1em black;
+
+    /*border: 1px solid #5c83cc;*/
+}
+.list__header{
+    background: #5c83cc;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 28px;
+    color: white;
+    /*box-shadow: 0 0 1em black;*/
+}
+.list__addtodo{
+    width: 100%;
+    background-color: white;
+    height:50px;
+    border: 1px solid #5c83cc;
+
+}
+.list__addtodo input{
+    width: 90%;
+    height: 100%;
+    padding: 10px;
+    font-size: 18px;
+}
+.list__addtodo button{
+    width: 10%;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    border-left:1px solid #5c83cc ;
+}
+.list__todolist{
+    min-height:300px;
+    background-color: white;
+    padding: 10px;
+    border-left: 1px solid #5c83cc;
+    border-right: 1px solid #5c83cc;
+}
+.list__button{
+    background: white;
+    padding: 10px;
+    text-align: center;
+    border-left: 1px solid #5c83cc;
+    border-right: 1px solid #5c83cc;
+}
+.list__button button {
+    background: #5c83cc;
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+}
