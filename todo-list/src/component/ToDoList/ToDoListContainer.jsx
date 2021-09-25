@@ -2,6 +2,8 @@ import React from 'react';
 import './ToDoList.module.css'
 import {connect} from "react-redux";
 import ToDoList from "./ToDoList";
+import {addMessageAC} from "../../redux/reducerToDoList";
+
 
 let mapStateToProps=(state)=>{
 
@@ -15,5 +17,13 @@ let mapStateToProps=(state)=>{
         sunday:state.doList.sunday
     }
 }
-const ToDoListContainer=connect(mapStateToProps)(ToDoList)
+let mapDispatchToProps=(dispatch)=> {
+    return {
+        addNewMessage:(newMyPost)=>{
+            dispatch(addMessageAC(newMyPost));
+        }
+
+    }
+}
+const ToDoListContainer=connect(mapStateToProps,mapDispatchToProps)(ToDoList)
 export default ToDoListContainer;
