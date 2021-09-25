@@ -1,8 +1,19 @@
 import React, {useState} from 'react';
 import './ToDoList.module.css'
 
+const ToDoListItems=(props)=>{
+    debugger
+    return(
+        <div className="list__todolist">
+            {props.title}
+            {/*{props[key][0].title}*/}
+        </div>
+    )
+}
 const ToDoList = (props) => {
-console.log(props)
+    debugger
+   let ToDoListItem=props.state.map(v=><ToDoListItems title={v.title}/>)
+
  // const   [input, setInput] = useState('')
     let text='';
     const input=(e)=>{
@@ -12,15 +23,16 @@ console.log(props)
     const addMessage=(e)=>{
         props.addNewMessage(text)
     }
-
-    for (let key in props) {
-        if (key == props.match.url.replace('/', '')) {
+    //
+    // for (let key in props) {
+    //     if (key == props.match.url.replace('/', '')) {
 
             return (
 
                 <div className='list'>
+
                     <div className="list__header">
-                        <span>{props[key][0].titleDay}</span>
+                        <span></span>
                     </div>
                     <div className='list__addtodo'>
 
@@ -28,16 +40,17 @@ console.log(props)
                         <button onClick={addMessage}>add</button>
 
                     </div>
-                    <div className="list__todolist">
-                        {props[key][0].title}
-                    </div>
+                    {ToDoListItem}
+                    {/*<div className="list__todolist">*/}
+                    {/*    /!*{props[key][0].title}*!/*/}
+                    {/*</div>*/}
                     <div className="list__button">
                         <button>Clear</button>
                     </div>
                 </div>
             );
-        }
-    }
+        // }
+    // }
     // return (
     //
     //     <div className='list'>

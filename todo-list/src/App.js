@@ -6,7 +6,8 @@ import ToDoList from "./component/ToDoList/ToDoList";
 import Nav from "./component/Nav/Nav";
 import NavContainer from "./component/Nav/NavContainer";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import ToDoListContainer from "./component/ToDoList/ToDoListContainer";
+import MondayContainer from "./component/day/Monday/MondayContainer";
+
 
 
 function App() {
@@ -19,13 +20,13 @@ function App() {
                 <div className="content_item">
                     <NavContainer/>
                     <Switch>
-                        <Route path="/monday" component={ToDoListContainer}></Route>
-                        <Route path="/tuesday" component={ToDoListContainer}></Route>
-                        <Route path="/wednesday" component={ToDoListContainer}></Route>
-                        <Route path="/thursday" component={ToDoListContainer}></Route>
-                        <Route path="/friday" component={ToDoListContainer}></Route>
-                        <Route path="/saturday" component={ToDoListContainer}></Route>
-                        <Route path="/sunday" component={ToDoListContainer}></Route>
+                        <Route path="/monday" component={MondayContainer}></Route>
+                        {/*<Route path="/tuesday" component={ToDoListContainer}></Route>*/}
+                        {/*<Route path="/wednesday" component={ToDoListContainer}></Route>*/}
+                        {/*<Route path="/thursday" component={ToDoListContainer}></Route>*/}
+                        {/*<Route path="/friday" component={ToDoListContainer}></Route>*/}
+                        {/*<Route path="/saturday" component={ToDoListContainer}></Route>*/}
+                        {/*<Route path="/sunday" component={ToDoListContainer}></Route>*/}
                     </Switch>
                     {/*<ToDoList/>*/}
                 </div>

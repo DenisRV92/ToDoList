@@ -36,7 +36,7 @@
     border-left:1px solid #5c83cc ;
 }
 .list__todolist{
-    min-height:300px;
+    /*min-height:300px;*/
     background-color: white;
     padding: 10px;
     border-left: 1px solid #5c83cc;

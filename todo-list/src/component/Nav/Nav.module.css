@@ -30,8 +30,21 @@ li {
     /*border:  #fff solid;*/
 }
 .list__question{
+    /*display: flex;*/
     padding: 0px 2px;
-    height: 80px;
+    /*height: 80px;*/
+    background-size: cover;
+    text-align: center;
+    /*align-items: flex-end;*/
+}
+.list__question img{
+    width: 100%;
+    /*padding: 5px 0;*/
+    /*height: 20%;*/
+    align-self: center;
+    /*align-items: flex-end;*/
+    /*z-index: 0;*/
+    /*text-align: center;*/
 }
 li:hover{
     width: 118px;
