@@ -29,28 +29,72 @@
     width: 90%;
     height: 100%;
     padding: 10px;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 .list__addtodo button {
     width: 10%;
     height: 100%;
     text-align: center;
-    font-size: 18px;
+    font-size: 22px;
     border-left: 1px solid #5c83cc;
 }
 
 .list__todolist {
     min-height: 300px;
-    word-wrap: break-word;
+    /*word-wrap: break-word;*/
     background-color: white;
     padding: 10px;
     border-left: 1px solid #5c83cc;
     border-right: 1px solid #5c83cc;
 }
 
-.message__decoration{
+.message__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.block__checkbox {
+
+    width: 20px;
+    height: 20px;
+
+}
+
+.block__checkboxEditor {
+  /*display: flex;*/
+    font-size: 20px;
+    width: 80%;
+    resize: none;
+    height: auto;
+
+    word-break: break-all;
+}
+
+.message__block span {
+    word-break: break-word;
+    padding-bottom: 3px;
+    flex: 0 0 80%;
+    padding-left: 15px;
+
+}
+
+/*.block__checkboxTitle {*/
+/*    width: 90%;*/
+/*    !*text-align:center;*!*/
+/*    !*align-items: center;*!*/
+/*}*/
+.block__decoration {
     text-decoration: line-through;
+}
+
+.block__buttons {
+    width: 15%;
+    justify-content: space-evenly;
+    display: flex;
+    color: #0b3389;
 }
 
 .list__button {
