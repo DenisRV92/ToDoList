@@ -2,7 +2,7 @@ import React from 'react';
 import './ToDoList.module.css'
 import {connect} from "react-redux";
 import ToDoList from "./ToDoList";
-import {addMessageAC} from "../../redux/reducerToDoList";
+
 
 
 let mapStateToProps=(state)=>{
@@ -18,12 +18,17 @@ let mapStateToProps=(state)=>{
     }
 }
 let mapDispatchToProps=(dispatch)=> {
+
     return {
         addNewMessage:(newMyPost)=>{
             dispatch(addMessageAC(newMyPost));
+        },
+        addNewCheked:(cheked)=>{
+            dispatch(addCheckedAC(cheked,id));
         }
 
     }
+
 }
 const ToDoListContainer=connect(mapStateToProps,mapDispatchToProps)(ToDoList)
 export default ToDoListContainer;

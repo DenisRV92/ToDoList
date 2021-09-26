@@ -1,34 +1,38 @@
 import React from 'react';
-const ADD_MESSAGE = 'ADD_MESSAGE';
+
+const ADD_MESSAGE_MONDAY = 'ADD_MESSAGE_MONDAY';
+const ADD_CHECKED_MONDAY = 'ADD_CHECKED_MONDAY';
 let initialState = {
-    message: [
-        // {titleDay:'Monday'},
-    ]
+    message: [],
 }
-const ReducerMonday = (state = initialState,action) => {
+const reducerMonday = (state = initialState, action) => {
 
     switch (action.type) {
-        case ADD_MESSAGE:
+        case ADD_MESSAGE_MONDAY:
             return {
                 ...state,
                 message: [...state.message, {
                     id: state.message.length + 1,
                     title: action.newMessage,
+                    checked: false
                 }]
-                // id: state.monday.length + 1,
-                // url: '/monday',
-                // title: action.newMessage,
-
             }
-        // posts: [...state.posts, {id: state.posts.length + 1, message: action.newMyPost, likeCount: 0}],
-
-
+        case ADD_CHECKED_MONDAY:
+            debugger
+            return {
+                ...state,
+                message: state.message.map(v=>{
+                    if (v.id === action.id) {
+                        return {...v,checked: action.checked}
+                    }
+                    return v
+                })
+            }
         default:
             return state
-
     }
-
+    debugger
 };
-export const addMessageAC = (newMessage) => ({type: ADD_MESSAGE, newMessage})
-
-export default ReducerMonday;
+export const addMessageAC = (newMessage) => ({type: ADD_MESSAGE_MONDAY, newMessage})
+export const addCheckedAC = (checked, id) => ({type: ADD_CHECKED_MONDAY, checked, id})
+export default reducerMonday;

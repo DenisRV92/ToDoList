@@ -2,11 +2,11 @@ import React from 'react';
 import './Nav.module.css'
 import Monday from "../day/Monday/Monday";
 import Friday from "../day/Friday/Friday";
-import Wednesday from "../day/Wednesday/Wednesday";
-import Thursday from "../day/Thursday/Thursday";
-import Saturday from "../day/Saturday/Saturday";
-import Sunday from "../day/Sunday/Sunday";
-import Thuesday from "../day/Tuesday/Thuesday";
+import WednesdayContainer from "../day/Wednesday/WednesdayContainer";
+import ThursdayContainer from "../day/Thursday/ThursdayContainer";
+import Saturday from "../day/Saturday/SaturdayContainer";
+import SundayContainer from "../day/Sunday/SundayContainer";
+import ThuesdayContainer from "../day/Tuesday/ThuesdayContainer";
 import imageList from '../../images/list.png'
 import {NavLink} from "react-router-dom";
 
@@ -31,12 +31,12 @@ const Nav = (props) => {
 let NavItem=props.nav.map(v => <NavItems url={v.url} titleDay={v.titleDay}/>)
     // let day1 = props.monday.map(v => <Monday url={v.url} titleDay={v.titleDay} title={v.title}/>)
 
-    // let day2 = props.tuesday.map(v => <Thuesday url={v.url} titleDay={v.titleDay} title={v.title}/>)
-    // let day3 = props.wednesday.map(v => <Wednesday url={v.url} titleDay={v.titleDay} title={v.title}/>)
-    // let day4 = props.thursday.map(v => <Thursday url={v.url} titleDay={v.titleDay} title={v.title}/>)
+    // let day2 = props.tuesday.map(v => <ThuesdayContainer url={v.url} titleDay={v.titleDay} title={v.title}/>)
+    // let day3 = props.wednesday.map(v => <WednesdayContainer url={v.url} titleDay={v.titleDay} title={v.title}/>)
+    // let day4 = props.thursday.map(v => <ThursdayContainer url={v.url} titleDay={v.titleDay} title={v.title}/>)
     // let day5 = props.friday.map(v => <Friday url={v.url} titleDay={v.titleDay} title={v.title}/>)
     // let day6 = props.saturday.map(v => <Saturday url={v.url} titleDay={v.titleDay} title={v.title}/>)
-    // let day7 = props.sunday.map(v => <Sunday url={v.url} titleDay={v.titleDay} title={v.title}/>)
+    // let day7 = props.sunday.map(v => <SundayContainer url={v.url} titleDay={v.titleDay} title={v.title}/>)
     return (
 
         <div className='nav'>
@@ -64,7 +64,7 @@ let NavItem=props.nav.map(v => <NavItems url={v.url} titleDay={v.titleDay}/>)
                 {/*</li>*/}
                 {/*<li>*/}
                 {/*    <div className='list__item'>*/}
-                {/*        Wednesday*/}
+                {/*        WednesdayContainer*/}
                 {/*    </div>*/}
                 {/*    <div className='list__question'>*/}
                 {/*        sss*/}
@@ -72,7 +72,7 @@ let NavItem=props.nav.map(v => <NavItems url={v.url} titleDay={v.titleDay}/>)
                 {/*</li>*/}
                 {/*<li>*/}
                 {/*    <div className='list__item'>*/}
-                {/*        Thursday*/}
+                {/*        ThursdayContainer*/}
                 {/*    </div>*/}
                 {/*    <div className='list__question'>*/}
                 {/*        sss*/}
@@ -96,7 +96,7 @@ let NavItem=props.nav.map(v => <NavItems url={v.url} titleDay={v.titleDay}/>)
                 {/*</li>*/}
                 {/*<li>*/}
                 {/*    <div className='list__item'>*/}
-                {/*        Sunday*/}
+                {/*        SundayContainer*/}
                 {/*    </div>*/}
                 {/*    <div className='list__question'>*/}
                 {/*        sss sss sss sss sss sss sss sss sss sss sss sss sss*/}

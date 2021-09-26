@@ -1,11 +1,12 @@
-const ADD_MESSAGE_WEDNESDAY = 'ADD_MESSAGE_WEDNESDAY';
+
+
+const ADD_MESSAGE__THUESDAY = 'ADD_MESSAGE__THUESDAY';
 let initialState = {
     message: [],
 }
-const reducerWednesday = (state = initialState, action) => {
-
+const reducerThuesday = (state=initialState, action) => {
     switch (action.type) {
-        case ADD_MESSAGE_WEDNESDAY:
+        case ADD_MESSAGE__THUESDAY:
             return {
                 ...state,
                 message: [...state.message, {
@@ -18,6 +19,7 @@ const reducerWednesday = (state = initialState, action) => {
     }
 
 };
-export const addMessageAC = (newMessage) => ({type: ADD_MESSAGE_WEDNESDAY, newMessage})
+export const addMessageAC = (newMessage) => ({type: ADD_MESSAGE__THUESDAY, newMessage})
 
-export default reducerWednesday;
+
+export default reducerThuesday;

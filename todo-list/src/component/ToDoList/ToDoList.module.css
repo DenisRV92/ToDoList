@@ -1,5 +1,5 @@
 .list {
-/*border: black 0.5px solid;*/
+    /*border: black 0.5px solid;*/
     width: 25%;
     margin: 0 auto;
     margin-bottom: 40px;
@@ -7,7 +7,8 @@
 
     /*border: 1px solid #5c83cc;*/
 }
-.list__header{
+
+.list__header {
     background: #5c83cc;
     text-transform: uppercase;
     text-align: center;
@@ -15,40 +16,51 @@
     color: white;
     /*box-shadow: 0 0 1em black;*/
 }
-.list__addtodo{
+
+.list__addtodo {
     width: 100%;
     background-color: white;
-    height:50px;
+    height: 50px;
     border: 1px solid #5c83cc;
 
 }
-.list__addtodo input{
+
+.list__addtodo input {
     width: 90%;
     height: 100%;
     padding: 10px;
     font-size: 18px;
 }
-.list__addtodo button{
+
+.list__addtodo button {
     width: 10%;
     height: 100%;
     text-align: center;
     font-size: 18px;
-    border-left:1px solid #5c83cc ;
+    border-left: 1px solid #5c83cc;
 }
-.list__todolist{
-    /*min-height:300px;*/
+
+.list__todolist {
+    min-height: 300px;
+    word-wrap: break-word;
     background-color: white;
     padding: 10px;
     border-left: 1px solid #5c83cc;
     border-right: 1px solid #5c83cc;
 }
-.list__button{
+
+.message__decoration{
+    text-decoration: line-through;
+}
+
+.list__button {
     background: white;
     padding: 10px;
     text-align: center;
     border-left: 1px solid #5c83cc;
     border-right: 1px solid #5c83cc;
 }
+
 .list__button button {
     background: #5c83cc;
     width: 80px;
