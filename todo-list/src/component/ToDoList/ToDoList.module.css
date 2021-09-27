@@ -52,7 +52,7 @@
 .message__block {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    /*align-items: center;*/
     margin-bottom: 15px;
 }
 
@@ -64,16 +64,21 @@
 }
 
 .block__checkboxEditor {
-  /*display: flex;*/
+    padding-left: 15px;
+    margin-top: -3px;
+    padding-bottom: 5px;
+    margin-right: 0px;
     font-size: 20px;
-    width: 80%;
     resize: none;
-    height: auto;
-
+    width: 80%;
+    height: 70px;
+    color: red;
     word-break: break-all;
+    line-height: 20px;
 }
 
 .message__block span {
+    margin-top: -3px;
     word-break: break-word;
     padding-bottom: 3px;
     flex: 0 0 80%;

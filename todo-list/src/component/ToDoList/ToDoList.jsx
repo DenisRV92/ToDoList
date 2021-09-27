@@ -9,26 +9,34 @@ import {
 
 
 const ToDoListItems = (props) => {
+
     let [editor, setEditor] = useState(false)
     const [value, setValue] = useState(props.title);
+
     let checked = '';
     const checkboxing = (e) => {
+
         checked = e.target.checked
         props.addNewCheked(checked, props.id)
 
     }
+
     const editorList = (e) => {
         setEditor(true)
     }
-    let text = '';
+
+
     const input = (e) => {
-        // e.target.value
         setValue(e.target.value)
-        return text = e.target.value
     }
 
-    const addMessage = (e) => {
-        props.addNewMessage(text)
+    const updateMessage = (e) => {
+        props.updateNewMessage(value, props.id)
+        setEditor(false)
+    }
+    const removeMessage = () => {
+        props.removeNewMessage(props.id)
+
     }
     return (
 
@@ -54,15 +62,16 @@ const ToDoListItems = (props) => {
                             <span>{props.title}</span>
                             <div className='block__buttons'>
                                 <div onClick={editorList}>{<FontAwesomeIcon icon={faPenAlt}/>}</div>
-                                <div><FontAwesomeIcon icon={faTrashAlt}/></div>
+                                <div onClick={removeMessage}><FontAwesomeIcon icon={faTrashAlt}/></div>
                             </div>
                         </div>
                         :
                         <div className='message__block'>
                             <input className='block__checkbox' disabled={true} type="checkbox" onClick={checkboxing}/>
-                            <input onChange={input} className='block__checkboxEditor' maxlength='90' value={value}/>
+                            <textarea onChange={input} className='block__checkboxEditor' value={value}/>
                             <div className='block__buttons'>
-                                <div onClick={addMessage}>{<FontAwesomeIcon icon={faSave}/>}</div>
+                                <div onClick={updateMessage}>{<FontAwesomeIcon icon={faSave}
+                                                                               style={{width: '21px'}}/>}</div>
                                 <div><FontAwesomeIcon icon={faTrashAlt}/></div>
                             </div>
                         </div>
@@ -79,15 +88,26 @@ const ToDoList = (props) => {
 
     let ToDoListItem = props.state.map(v => <ToDoListItems title={v.title}
                                                            addNewCheked={props.addNewCheked}
+                                                           updateNewMessage={props.updateNewMessage}
+                                                           removeNewMessage={props.removeNewMessage}
                                                            id={v.id}
                                                            checked={v.checked}/>)
-    let text = '';
+    // let text = '';
+    let [text,setText]=useState()
     const input = (e) => {
-        return text = e.target.value
+        setText(e.target.value)
+        // return text = e.target.value
     }
+    // let [text,setText]=useState()
 
     const addMessage = (e) => {
-        props.addNewMessage(text)
+        if(text!=='') {
+            props.addNewMessage(text)
+            setText('')
+        }
+    }
+    const removeAllMessage=()=>{
+        props.removeNewAllMessage()
     }
 
     //     if (key == props.match.url.replace('/', '')) {
@@ -101,7 +121,7 @@ const ToDoList = (props) => {
             </div>
             <div className='list__addtodo'>
 
-                <input onChange={input} type="text"/>
+                <input onChange={input} type="text" value={text}/>
                 <button onClick={addMessage}>add</button>
 
             </div>
@@ -111,7 +131,7 @@ const ToDoList = (props) => {
             </div>
 
             <div className="list__button">
-                <button>Clear</button>
+                <button onClick={removeAllMessage}>Clear</button>
             </div>
         </div>
     );
