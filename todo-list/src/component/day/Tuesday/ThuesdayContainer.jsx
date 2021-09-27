@@ -1,13 +1,17 @@
-
-import {addMessageAC} from "../../../redux/reducerThuesday";
 import {connect} from "react-redux";
 import ToDoList from "../../ToDoList/ToDoList";
-import {addCheckedAC, removeAllMessageAC, removeMessageAC, updateMessageAC} from "../../../redux/reducerThuesday";
+import {
+    addCompletedAC,
+    addMessageAC,
+    removeAllMessageAC,
+    removeMessageAC,
+    updateMessageAC
+} from "../../../redux/reducerThuesday";
 
-let mapStateToProps=(state)=>{
-debugger
-    return{
-        state:state.thuesday.message
+let mapStateToProps = (state) => {
+
+    return {
+        state: state.thuesday.message
     }
 }
 let mapDispatchToProps = (dispatch) => {
@@ -16,8 +20,8 @@ let mapDispatchToProps = (dispatch) => {
         addNewMessage: (newMyPost) => {
             dispatch(addMessageAC(newMyPost));
         },
-        addNewCheked: (checked, id) => {
-            dispatch(addCheckedAC(checked, id));
+        addNewCheked: (completed, id) => {
+            dispatch(addCompletedAC(completed, id));
         },
         updateNewMessage: (updateMessage, id) => {
             dispatch(updateMessageAC(updateMessage, id))
@@ -25,11 +29,11 @@ let mapDispatchToProps = (dispatch) => {
         removeNewMessage: (id) => {
             dispatch(removeMessageAC(id))
         },
-        removeNewAllMessage:()=>{
+        removeNewAllMessage: () => {
             dispatch(removeAllMessageAC())
         }
 
     }
 }
-const ThuesdayContainer=connect(mapStateToProps,mapDispatchToProps)(ToDoList)
+const ThuesdayContainer = connect(mapStateToProps, mapDispatchToProps)(ToDoList)
 export default ThuesdayContainer;

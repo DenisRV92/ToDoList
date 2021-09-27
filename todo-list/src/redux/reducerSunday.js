@@ -1,8 +1,8 @@
-const ADD_MESSAGE_SUNDAY= 'ADD_MESSAGE_SUNDAY';
-const ADD_CHECKED_SUNDAY= 'ADD_CHECKED_SUNDAY';
-const UPDATE_MESSAGE_SUNDAY= 'UPDATE_MESSAGE_SUNDAY';
-const REMOVE_MESSAGE_SUNDAY= 'REMOVE_MESSAGE_SUNDAY';
-const REMOVE_ALL_MESSAGE_SUNDAY= 'REMOVE_ALL_MESSAGE_SUNDAY';
+const ADD_MESSAGE_SUNDAY = 'ADD_MESSAGE_SUNDAY';
+const ADD_COMPLETED_SUNDAY = 'ADD_CHECKED_SUNDAY';
+const UPDATE_MESSAGE_SUNDAY = 'UPDATE_MESSAGE_SUNDAY';
+const REMOVE_MESSAGE_SUNDAY = 'REMOVE_MESSAGE_SUNDAY';
+const REMOVE_ALL_MESSAGE_SUNDAY = 'REMOVE_ALL_MESSAGE_SUNDAY';
 let initialState = {
     message: [],
 }
@@ -15,15 +15,15 @@ const reducerSunday = (state = initialState, action) => {
                 message: [...state.message, {
                     id: state.message.length + 1,
                     title: action.newMessage,
-                    checked: false
+                    completed: false
                 }]
             }
-        case ADD_CHECKED_SUNDAY:
+        case ADD_COMPLETED_SUNDAY:
             return {
                 ...state,
                 message: state.message.map(v => {
                     if (v.id === action.id) {
-                        return {...v, checked: action.checked}
+                        return {...v, completed: action.completed}
                     }
                     return v
                 })
@@ -45,7 +45,7 @@ const reducerSunday = (state = initialState, action) => {
                     if (v.id !== action.id) {
                         return {...v}
                     }
-
+                    return null
                 })
             }
         case REMOVE_ALL_MESSAGE_SUNDAY:
@@ -58,11 +58,10 @@ const reducerSunday = (state = initialState, action) => {
     }
 
 };
+
 export const addMessageAC = (newMessage) => ({type: ADD_MESSAGE_SUNDAY, newMessage})
-export const addCheckedAC = (checked, id) => ({type: ADD_CHECKED_SUNDAY, checked, id})
+export const addCompletedAC = (completed, id) => ({type: ADD_COMPLETED_SUNDAY, completed, id})
 export const updateMessageAC = (updateMessage, id) => ({type: UPDATE_MESSAGE_SUNDAY, updateMessage, id})
 export const removeMessageAC = (id) => ({type: REMOVE_MESSAGE_SUNDAY, id})
 export const removeAllMessageAC = () => ({type: REMOVE_ALL_MESSAGE_SUNDAY})
-
-
 export default reducerSunday;

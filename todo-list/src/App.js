@@ -1,9 +1,6 @@
 import './style/App.css';
 import React from 'react'
 import Header from "./component/Header/Header";
-import ToDoList from "./component/ToDoList/ToDoList";
-// import NavContainer from "./component/Nav/NavContainer";
-import Nav from "./component/Nav/Nav";
 import NavContainer from "./component/Nav/NavContainer";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import MondayContainer from "./component/day/Monday/MondayContainer";
@@ -13,6 +10,7 @@ import ThursdayContainer from "./component/day/Thursday/ThursdayContainer";
 import FridayContainer from "./component/day/Friday/FridayContainer";
 import SaturdayContainer from "./component/day/Saturday/SaturdayContainer";
 import SundayContainer from "./component/day/Sunday/SundayContainer";
+import Monday from "./component/day/Monday/Monday";
 
 
 

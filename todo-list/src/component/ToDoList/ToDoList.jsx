@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './ToDoList.module.css'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
@@ -7,18 +7,22 @@ import {
     faSave,
     faPlusCircle,
 } from "@fortawesome/free-solid-svg-icons";
+import * as axios from "axios";
+// import {addMessageSeverAC} from "../../redux/reducerMonday";
+
 
 
 const ToDoListItems = (props) => {
 
+    // props.addNewMessageSever()
     let [editor, setEditor] = useState(false)
     const [value, setValue] = useState(props.title);
 
 
-    let checked = '';
+    let completed = '';
     const checkboxing = (e) => {
-        checked = e.target.checked
-        props.addNewCheked(checked, props.id)
+        completed = e.target.checked
+        props.addNewCheked(completed, props.id)
 
     }
 
@@ -44,12 +48,12 @@ const ToDoListItems = (props) => {
     return (
 
         <div className='todolist__message'>
-            {props.checked ?
+            {props.completed ?
                 <div className='message__block'>
-                    <input className='block__checkbox' type="checkbox" checked={props.checked} onClick={checkboxing}/>
+                    <input className='block__checkbox' type="checkbox" checked={props.completed} onChange={checkboxing}/>
                     <span className='block__decoration'>{props.title}</span>
                     <div className='block__buttons'>
-                        <div disabled={true} >
+                        <div disabled={true}>
                             <FontAwesomeIcon icon={faPenAlt} style={{color: 'lightslategrey'}}/>
                         </div>
                         <div className='buttons__icons' onClick={removeMessageEditor}>
@@ -92,15 +96,19 @@ const ToDoListItems = (props) => {
 }
 
 const ToDoList = (props) => {
-
+    console.log(props)
+// console.log(window.location.pathname)
     let ToDoListItem = props.state.map(v => <ToDoListItems title={v.title}
+                                                           key={v.id}
                                                            addNewCheked={props.addNewCheked}
                                                            updateNewMessage={props.updateNewMessage}
                                                            removeNewMessage={props.removeNewMessage}
+                                                           addNewMessageSever={props.addNewMessageSever}
                                                            id={v.id}
-                                                           checked={v.checked}/>)
+                                                           completed={v.completed}/>)
 
     let [text, setText] = useState('')
+
     const input = (e) => {
         setText(e.target.value)
     }
@@ -117,18 +125,18 @@ const ToDoList = (props) => {
     }
 
     //     if (key == props.match.url.replace('/', '')) {
-const icon=<FontAwesomeIcon icon={faPlusCircle}/>
+
     return (
 
         <div className='list'>
 
             <div className="list__header">
-                <span>{props.match.url.replace('/', '')}</span>
+                <span>{window.location.pathname.replace('/', '')}</span>
             </div>
             <div className='list__addtodo'>
                 <img src="" alt=""/>
-                <input onChange={input} type="text" value={text}/>
-                <button onClick={addMessage}><FontAwesomeIcon icon={faPlusCircle}/></button>
+                <input placeholder='enter text' onChange={input} type="text" value={text}/>
+                <button onClick={addMessage}><FontAwesomeIcon icon={faPlusCircle} size="lg"/></button>
 
             </div>
             <div className="list__todolist">

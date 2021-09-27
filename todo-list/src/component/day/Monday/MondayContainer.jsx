@@ -1,17 +1,22 @@
 import {connect} from "react-redux";
-import ToDoList from "../../ToDoList/ToDoList";
+// import ToDoList from "../../ToDoList/ToDoList";
 import {
-    addCheckedAC,
-    addMessageAC,
+    addCompletedAC,
+    addMessageAC, addMessageSeverAC,
     removeAllMessageAC,
     removeMessageAC,
     updateMessageAC
 } from "../../../redux/reducerMonday";
+import React, {useEffect, useState} from "react";
+import {AxiosInstance as axios} from "axios";
+import Monday from "./Monday";
 
 let mapStateToProps = (state) => {
 
     return {
-        state: state.monday.message
+        state: state.monday.message,
+
+
     }
 }
 let mapDispatchToProps = (dispatch) => {
@@ -20,8 +25,8 @@ let mapDispatchToProps = (dispatch) => {
         addNewMessage: (newMyPost) => {
             dispatch(addMessageAC(newMyPost));
         },
-        addNewCheked: (checked, id) => {
-            dispatch(addCheckedAC(checked, id));
+        addNewCheked: (completed, id) => {
+            dispatch(addCompletedAC(completed, id));
         },
         updateNewMessage: (updateMessage, id) => {
             dispatch(updateMessageAC(updateMessage, id))
@@ -29,12 +34,17 @@ let mapDispatchToProps = (dispatch) => {
         removeNewMessage: (id) => {
             dispatch(removeMessageAC(id))
         },
-        removeNewAllMessage:()=>{
+        removeNewAllMessage: () => {
             dispatch(removeAllMessageAC())
-    }
+        },
+        addNewMessageSever: (title, completed) => {
+
+            dispatch(addMessageSeverAC(title, completed))
+        }
 
     }
+
+
 }
-
-const MondayContainer = connect(mapStateToProps, mapDispatchToProps)(ToDoList)
+const MondayContainer = connect(mapStateToProps, mapDispatchToProps)(Monday)
 export default MondayContainer;

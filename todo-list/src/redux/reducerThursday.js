@@ -1,34 +1,34 @@
-const ADD_MESSAGE_THUESDAY= 'ADD_MESSAGE_THUESDAY';
-const ADD_CHECKED_THUESDAY= 'ADD_CHECKED_THUESDAY';
-const UPDATE_MESSAGE_THUESDAY= 'UPDATE_MESSAGE_THUESDAY';
-const REMOVE_MESSAGE_THUESDAY= 'REMOVE_MESSAGE_THUESDAY';
-const REMOVE_ALL_MESSAGE_THUESDAY= 'REMOVE_ALL_MESSAGE_THUESDAY';
+const ADD_MESSAGE_THURSDAY = 'ADD_MESSAGE_THURSDAY';
+const ADD_COMPLETED_THURSDAY = 'ADD_CHECKED_THURSDAY';
+const UPDATE_MESSAGE_THURSDAY = 'UPDATE_MESSAGE_THURSDAY';
+const REMOVE_MESSAGE_THURSDAY = 'REMOVE_MESSAGE_THURSDAY';
+const REMOVE_ALL_MESSAGE_THURSDAY = 'REMOVE_ALL_MESSAGE_THURSDAY';
 let initialState = {
     message: [],
 }
 const reducerThursday = (state = initialState, action) => {
 
     switch (action.type) {
-        case ADD_MESSAGE_THUESDAY:
+        case ADD_MESSAGE_THURSDAY:
             return {
                 ...state,
                 message: [...state.message, {
                     id: state.message.length + 1,
                     title: action.newMessage,
-                    checked: false
+                    completed: false
                 }]
             }
-        case ADD_CHECKED_THUESDAY:
+        case ADD_COMPLETED_THURSDAY:
             return {
                 ...state,
                 message: state.message.map(v => {
                     if (v.id === action.id) {
-                        return {...v, checked: action.checked}
+                        return {...v, completed: action.completed}
                     }
                     return v
                 })
             }
-        case UPDATE_MESSAGE_THUESDAY:
+        case UPDATE_MESSAGE_THURSDAY:
             return {
                 ...state,
                 message: state.message.map(v => {
@@ -38,17 +38,17 @@ const reducerThursday = (state = initialState, action) => {
                     return v
                 })
             }
-        case REMOVE_MESSAGE_THUESDAY:
+        case REMOVE_MESSAGE_THURSDAY:
             return {
                 ...state,
                 message: state.message.filter(v => {
                     if (v.id !== action.id) {
                         return {...v}
                     }
-
+                    return null
                 })
             }
-        case REMOVE_ALL_MESSAGE_THUESDAY:
+        case REMOVE_ALL_MESSAGE_THURSDAY:
             return {
                 ...state,
                 message: []
@@ -58,10 +58,10 @@ const reducerThursday = (state = initialState, action) => {
     }
 
 };
-export const addMessageAC = (newMessage) => ({type: ADD_MESSAGE_THUESDAY, newMessage})
-export const addCheckedAC = (checked, id) => ({type: ADD_CHECKED_THUESDAY, checked, id})
-export const updateMessageAC = (updateMessage, id) => ({type: UPDATE_MESSAGE_THUESDAY, updateMessage, id})
-export const removeMessageAC = (id) => ({type: REMOVE_MESSAGE_THUESDAY, id})
-export const removeAllMessageAC = () => ({type: REMOVE_ALL_MESSAGE_THUESDAY})
 
+export const addMessageAC = (newMessage) => ({type: ADD_MESSAGE_THURSDAY, newMessage})
+export const addCompletedAC = (completed, id) => ({type: ADD_COMPLETED_THURSDAY, completed, id})
+export const updateMessageAC = (updateMessage, id) => ({type: UPDATE_MESSAGE_THURSDAY, updateMessage, id})
+export const removeMessageAC = (id) => ({type: REMOVE_MESSAGE_THURSDAY, id})
+export const removeAllMessageAC = () => ({type: REMOVE_ALL_MESSAGE_THURSDAY})
 export default reducerThursday;

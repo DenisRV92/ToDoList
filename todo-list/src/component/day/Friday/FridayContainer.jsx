@@ -1,6 +1,6 @@
 
 import {
-    addCheckedAC,
+    addCompletedAC,
     addMessageAC,
     removeAllMessageAC,
     removeMessageAC,
@@ -11,7 +11,7 @@ import ToDoList from "../../ToDoList/ToDoList";
 
 
 let mapStateToProps=(state)=>{
-    debugger
+
     return{
         state:state.friday.message
     }
@@ -22,8 +22,8 @@ let mapDispatchToProps = (dispatch) => {
         addNewMessage: (newMyPost) => {
             dispatch(addMessageAC(newMyPost));
         },
-        addNewCheked: (checked, id) => {
-            dispatch(addCheckedAC(checked, id));
+        addNewCheked: (completed, id) => {
+            dispatch(addCompletedAC(completed, id));
         },
         updateNewMessage: (updateMessage, id) => {
             dispatch(updateMessageAC(updateMessage, id))

@@ -1,7 +1,7 @@
 
 // !!!
 import {
-    addCheckedAC,
+    addCompletedAC,
     addMessageAC,
     removeAllMessageAC,
     removeMessageAC,
@@ -10,7 +10,7 @@ import {
 // !!!
 import {connect} from "react-redux";
 import ToDoList from "../../ToDoList/ToDoList";
-// import {addCheckedAC, removeAllMessageAC, removeMessageAC, updateMessageAC} from "../../../redux/reducerMonday";
+
 
 let mapStateToProps=(state)=>{
 
@@ -24,8 +24,8 @@ let mapDispatchToProps = (dispatch) => {
         addNewMessage: (newMyPost) => {
             dispatch(addMessageAC(newMyPost));
         },
-        addNewCheked: (checked, id) => {
-            dispatch(addCheckedAC(checked, id));
+        addNewCheked: (completed, id) => {
+            dispatch(addCompletedAC(completed, id));
         },
         updateNewMessage: (updateMessage, id) => {
             dispatch(updateMessageAC(updateMessage, id))

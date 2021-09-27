@@ -1,10 +1,16 @@
 
 // !!!
-import {addMessageAC} from "../../../redux/reducerWednesday";
+import {
+    addCompletedAC,
+    addMessageAC,
+    removeAllMessageAC,
+    removeMessageAC,
+    updateMessageAC
+} from "../../../redux/reducerWednesday";
 // !!!
 import {connect} from "react-redux";
 import ToDoList from "../../ToDoList/ToDoList";
-import {addCheckedAC, removeAllMessageAC, removeMessageAC, updateMessageAC} from "../../../redux/reducerWednesday";
+// import {addCompletedAC, removeAllMessageAC, removeMessageAC, updateMessageAC} from "../../../redux/reducerWednesday";
 
 let mapStateToProps=(state)=>{
 
@@ -18,8 +24,8 @@ let mapDispatchToProps = (dispatch) => {
         addNewMessage: (newMyPost) => {
             dispatch(addMessageAC(newMyPost));
         },
-        addNewCheked: (checked, id) => {
-            dispatch(addCheckedAC(checked, id));
+        addNewCheked: (completed, id) => {
+            dispatch(addCompletedAC(completed, id));
         },
         updateNewMessage: (updateMessage, id) => {
             dispatch(updateMessageAC(updateMessage, id))
