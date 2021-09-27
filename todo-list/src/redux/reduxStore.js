@@ -1,5 +1,4 @@
 import {combineReducers, createStore} from "redux";
-import reducerToDoList from "./reducerToDoList";
 import reducerMonday from "./reducerMonday";
 import reducerNav from "./reducerNav";
 import reducerTuesday from "./reducerThuesday";
@@ -7,7 +6,7 @@ import ReducerWednesday from "./reducerWednesday";
 import reducerThursday from "./reducerThursday";
 import reducerFriday from "./reducerFriday";
 import reducerSaturday from "./reducerSaturday";
-import reducerSanday from "./reducerSunday";
+import reducerSunday from "./reducerSunday";
 
 let reducers = combineReducers({
     nav: reducerNav,
@@ -17,7 +16,7 @@ let reducers = combineReducers({
     thursday:reducerThursday,
     friday:reducerFriday,
     saturday:reducerSaturday,
-    sunday:reducerSanday
+    sunday:reducerSunday
 })
 
 let store = createStore(reducers)

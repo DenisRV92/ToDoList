@@ -1,7 +1,14 @@
 
-import {addMessageAC} from "../../../redux/reducerFriday";
+import {
+    addCheckedAC,
+    addMessageAC,
+    removeAllMessageAC,
+    removeMessageAC,
+    updateMessageAC
+} from "../../../redux/reducerFriday";
 import {connect} from "react-redux";
 import ToDoList from "../../ToDoList/ToDoList";
+
 
 let mapStateToProps=(state)=>{
     debugger
@@ -9,10 +16,23 @@ let mapStateToProps=(state)=>{
         state:state.friday.message
     }
 }
-let mapDispatchToProps=(dispatch)=> {
+let mapDispatchToProps = (dispatch) => {
+
     return {
-        addNewMessage:(newMyPost)=>{
+        addNewMessage: (newMyPost) => {
             dispatch(addMessageAC(newMyPost));
+        },
+        addNewCheked: (checked, id) => {
+            dispatch(addCheckedAC(checked, id));
+        },
+        updateNewMessage: (updateMessage, id) => {
+            dispatch(updateMessageAC(updateMessage, id))
+        },
+        removeNewMessage: (id) => {
+            dispatch(removeMessageAC(id))
+        },
+        removeNewAllMessage:()=>{
+            dispatch(removeAllMessageAC())
         }
 
     }

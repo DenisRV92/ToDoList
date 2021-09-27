@@ -1,12 +1,12 @@
 import React from 'react';
 import './Nav.module.css'
-import Monday from "../day/Monday/Monday";
-import Friday from "../day/Friday/Friday";
-import WednesdayContainer from "../day/Wednesday/WednesdayContainer";
-import ThursdayContainer from "../day/Thursday/ThursdayContainer";
-import Saturday from "../day/Saturday/SaturdayContainer";
-import SundayContainer from "../day/Sunday/SundayContainer";
-import ThuesdayContainer from "../day/Tuesday/ThuesdayContainer";
+
+// import Friday from "../day/Friday/Friday";
+// import WednesdayContainer from "../day/Wednesday/WednesdayContainer";
+// import ThursdayContainer from "../day/Thursday/ThursdayContainer";
+// import Saturday from "../day/Saturday/SaturdayContainer";
+// import SundayContainer from "../day/Sunday/SundayContainer";
+// import ThuesdayContainer from "../day/Tuesday/ThuesdayContainer";
 import imageList from '../../images/list.png'
 import {NavLink} from "react-router-dom";
 

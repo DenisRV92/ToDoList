@@ -22,6 +22,7 @@ li {
 
 .list__item {
     text-align: center;
+    color: white;
     /*border-bottom: #ebebeb 2px solid;*/
     background: #5c83cc;
     /*height: 25px;*/

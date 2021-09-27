@@ -1,11 +1,8 @@
 .list {
-    /*border: black 0.5px solid;*/
     width: 25%;
     margin: 0 auto;
     margin-bottom: 40px;
     box-shadow: 0 0 1em black;
-
-    /*border: 1px solid #5c83cc;*/
 }
 
 .list__header {
@@ -14,12 +11,10 @@
     text-align: center;
     padding: 10px 28px;
     color: white;
-    /*box-shadow: 0 0 1em black;*/
 }
 
 .list__addtodo {
     width: 100%;
-    background-color: white;
     height: 50px;
     border: 1px solid #5c83cc;
 
@@ -33,11 +28,14 @@
 }
 
 .list__addtodo button {
+    color: #0b3389;
+    background-color: white;
     width: 10%;
     height: 100%;
     text-align: center;
     font-size: 22px;
     border-left: 1px solid #5c83cc;
+
 }
 
 .list__todolist {
@@ -57,10 +55,8 @@
 }
 
 .block__checkbox {
-
     width: 20px;
     height: 20px;
-
 }
 
 .block__checkboxEditor {
@@ -86,11 +82,6 @@
 
 }
 
-/*.block__checkboxTitle {*/
-/*    width: 90%;*/
-/*    !*text-align:center;*!*/
-/*    !*align-items: center;*!*/
-/*}*/
 .block__decoration {
     text-decoration: line-through;
 }
@@ -100,6 +91,16 @@
     justify-content: space-evenly;
     display: flex;
     color: #0b3389;
+}
+
+.block__checkbox, .buttons__icons :hover {
+    cursor: pointer;
+}
+
+.block__checkbox, .buttons__icons :active {
+    cursor: pointer;
+    color: lightslategrey;
+
 }
 
 .list__button {
