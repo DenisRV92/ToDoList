@@ -77,8 +77,9 @@ const ToDoListItems = (props) => {
                             <input className='block__checkbox' disabled={true} type="checkbox" onClick={checkboxing}/>
                             <TextareaAutosize onChange={input} className='block__checkboxEditor' value={value}/>
                             <div className='block__buttons'>
-                                <div className='buttons__icons' onClick={updateMessage}>{<FontAwesomeIcon icon={faSave}
-                                                                                                          style={{width: '21px'}}/>}</div>
+                                <div className='buttons__icons' onClick={updateMessage}>{<FontAwesomeIcon  icon={faSave}
+                                                                                                          style={{width: '21px'
+                                                                                                          }}/>}</div>
                                 <div className='buttons__icons' disabled={true}><FontAwesomeIcon icon={faTrashAlt}
                                                                                                  style={{color: 'lightslategrey'}}/>
                                 </div>

@@ -22,6 +22,7 @@ function App() {
             <Header/>
             <div className="content">
                 <div className="content_item">
+                    {/*<Header/>*/}
                     <NavContainer/>
                     <Switch>
                         <Route path="/monday" component={MondayContainer}></Route>

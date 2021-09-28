@@ -5,6 +5,25 @@
     box-shadow: 0 0 1em black;
 }
 
+@media (max-width: 1300px) {
+    .list {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .list {
+        width: 75%;
+    }
+}
+@media (max-width: 468px) {
+    .list {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0px;
+    }
+}
+
 .list__header {
     background: #5c83cc;
     text-transform: uppercase;
@@ -18,6 +37,12 @@
     height: 50px;
     border: 1px solid #5c83cc;
 
+}
+
+@media (max-width: 992px) {
+    .list__addtodo {
+        font-size: 18px;
+    }
 }
 
 .list__addtodo input {
@@ -48,13 +73,32 @@
     border-right: 1px solid #5c83cc;
 }
 
+@media (max-width: 992px) {
+    .list__todolist {
+        font-size: 18px;
+        min-height: 140px;
+    }
+}
+@media (max-width: 468px) {
+    .list__todolist {
+        border: none;
+       height: 700px;
+    }
+}
 .message__block {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
 }
 
+@media (max-width: 1300px) {
+    .message__block span {
+        font-size: 18px;
+    }
+}
+
 .block__checkbox {
+    flex: 0 0 5%;
     width: 20px;
     height: 20px;
 }
@@ -70,12 +114,30 @@
     resize: none;
 }
 
+@media (max-width: 1300px) {
+    .block__checkboxEditor {
+        font-size: 18px;
+        line-height: 18px;
+        padding-right: 5px;
+    }
+
+}
+
+/*@media (max-width: 1300px) {*/
+/*    .block__checkboxEditor {*/
+/*        font-size: 18px;*/
+/*        line-height: 18px;*/
+/*        padding-right: 5px;*/
+/*    }*/
+/*}*/
 .message__block span {
     margin-top: -3px;
     word-break: break-word;
     padding-bottom: 3px;
     flex: 0 0 80%;
     padding-left: 15px;
+    /*padding-right: 5px;*/
+    /*!*margin-bottom: 3px;*!*/
 
 }
 
@@ -89,6 +151,7 @@
     display: flex;
     color: #0b3389;
 }
+
 
 .block__checkbox, .buttons__icons :hover {
     cursor: pointer;
@@ -108,6 +171,12 @@
     border-right: 1px solid #5c83cc;
 }
 
+@media (max-width: 1300px) {
+    .list__button {
+        border: none;
+    }
+
+}
 .list__button button {
     background: #5c83cc;
     width: 80px;
