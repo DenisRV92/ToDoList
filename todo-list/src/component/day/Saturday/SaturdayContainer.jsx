@@ -1,5 +1,6 @@
 import {
     addCompletedAC,
+    addMessageSeverAC,
     addMessageAC,
     removeAllMessageAC,
     removeMessageAC,
@@ -7,6 +8,8 @@ import {
 } from "../../../redux/reducerSaturday";
 import {connect} from "react-redux";
 import ToDoList from "../../ToDoList/ToDoList";
+import Saturday from "./Saturday";
+
 
 
 let mapStateToProps=(state)=>{
@@ -32,9 +35,12 @@ let mapDispatchToProps = (dispatch) => {
         },
         removeNewAllMessage:()=>{
             dispatch(removeAllMessageAC())
+        },
+        addNewMessageSever: (title, completed) => {
+            dispatch(addMessageSeverAC(title, completed))
         }
 
     }
 }
-const SaturdayContainer=connect(mapStateToProps,mapDispatchToProps)(ToDoList)
+const SaturdayContainer=connect(mapStateToProps,mapDispatchToProps)(Saturday)
 export default SaturdayContainer;

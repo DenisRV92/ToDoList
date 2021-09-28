@@ -3,6 +3,7 @@ const ADD_COMPLETED_THURSDAY = 'ADD_CHECKED_THURSDAY';
 const UPDATE_MESSAGE_THURSDAY = 'UPDATE_MESSAGE_THURSDAY';
 const REMOVE_MESSAGE_THURSDAY = 'REMOVE_MESSAGE_THURSDAY';
 const REMOVE_ALL_MESSAGE_THURSDAY = 'REMOVE_ALL_MESSAGE_THURSDAY';
+const ADD_MESSAGE_SERVER_THURSDAY='ADD_MESSAGE_SERVER_THURSDAY'
 let initialState = {
     message: [],
 }
@@ -53,6 +54,15 @@ const reducerThursday = (state = initialState, action) => {
                 ...state,
                 message: []
             }
+        case ADD_MESSAGE_SERVER_THURSDAY:
+            return {
+                ...state,
+                message: [...state.message, {
+                    id: state.message.length + 1,
+                    title: action.title,
+                    completed: action.completed
+                }]
+            }
         default:
             return state
     }
@@ -64,4 +74,6 @@ export const addCompletedAC = (completed, id) => ({type: ADD_COMPLETED_THURSDAY,
 export const updateMessageAC = (updateMessage, id) => ({type: UPDATE_MESSAGE_THURSDAY, updateMessage, id})
 export const removeMessageAC = (id) => ({type: REMOVE_MESSAGE_THURSDAY, id})
 export const removeAllMessageAC = () => ({type: REMOVE_ALL_MESSAGE_THURSDAY})
+export const addMessageSeverAC = (title,completed) => ({type: ADD_MESSAGE_SERVER_THURSDAY, title, completed})
+
 export default reducerThursday;

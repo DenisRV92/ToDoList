@@ -75,4 +75,5 @@ export const updateMessageAC = (updateMessage, id) => ({type: UPDATE_MESSAGE_MON
 export const removeMessageAC = (id) => ({type: REMOVE_MESSAGE_MONDAY, id})
 export const removeAllMessageAC = () => ({type: REMOVE_ALL_MESSAGE_MONDAY})
 export const addMessageSeverAC = (title,completed) => ({type: ADD_MESSAGE_SERVER_MONDAY, title, completed})
+
 export default reducerMonday;

@@ -3,6 +3,8 @@ const ADD_COMPLETED_SUNDAY = 'ADD_CHECKED_SUNDAY';
 const UPDATE_MESSAGE_SUNDAY = 'UPDATE_MESSAGE_SUNDAY';
 const REMOVE_MESSAGE_SUNDAY = 'REMOVE_MESSAGE_SUNDAY';
 const REMOVE_ALL_MESSAGE_SUNDAY = 'REMOVE_ALL_MESSAGE_SUNDAY';
+const ADD_MESSAGE_SERVER_SUNDAY='ADD_MESSAGE_SERVER_SUNDAY';
+
 let initialState = {
     message: [],
 }
@@ -64,4 +66,6 @@ export const addCompletedAC = (completed, id) => ({type: ADD_COMPLETED_SUNDAY, c
 export const updateMessageAC = (updateMessage, id) => ({type: UPDATE_MESSAGE_SUNDAY, updateMessage, id})
 export const removeMessageAC = (id) => ({type: REMOVE_MESSAGE_SUNDAY, id})
 export const removeAllMessageAC = () => ({type: REMOVE_ALL_MESSAGE_SUNDAY})
+export const addMessageSeverAC = (title,completed) => ({type: ADD_MESSAGE_SERVER_SUNDAY, title, completed})
+
 export default reducerSunday;

@@ -1,17 +1,16 @@
-import React, {useEffect} from 'react';
+import React, {useEffect} from "react";
 import * as axios from "axios";
 import ToDoList from "../../ToDoList/ToDoList";
 
-const Thuesday = (props) => {
-
+const Wednesday = (props) => {
     useEffect(() => {
         const getTask = async () => {
-            if (new Date().getDay() === 2 && props.state.length === 0) {
+            if (new Date().getDay() === 3 && props.state.length === 0) {
                 const res = await axios.get("https://raw.githubusercontent.com/YuryScript/interviewTestFakeApi/main/task.json")
                 res.data.map((v) => props.addNewMessageSever(v.title, v.completed))
             }
-        }
 
+        }
         getTask()
     }, []);
 
@@ -28,4 +27,4 @@ const Thuesday = (props) => {
     );
 };
 
-export default Thuesday;
+export default Wednesday;

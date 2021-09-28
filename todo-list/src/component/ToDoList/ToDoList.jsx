@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import './ToDoList.module.css'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
@@ -7,14 +7,10 @@ import {
     faSave,
     faPlusCircle,
 } from "@fortawesome/free-solid-svg-icons";
-import * as axios from "axios";
-// import {addMessageSeverAC} from "../../redux/reducerMonday";
-
-
+import TextareaAutosize from 'react-textarea-autosize';
 
 const ToDoListItems = (props) => {
 
-    // props.addNewMessageSever()
     let [editor, setEditor] = useState(false)
     const [value, setValue] = useState(props.title);
 
@@ -45,12 +41,14 @@ const ToDoListItems = (props) => {
     const removeMessageEditor = () => {
         props.removeNewMessage(props.id)
     }
+
     return (
 
         <div className='todolist__message'>
             {props.completed ?
                 <div className='message__block'>
-                    <input className='block__checkbox' type="checkbox" checked={props.completed} onChange={checkboxing}/>
+                    <input className='block__checkbox' type="checkbox" checked={props.completed}
+                           onChange={checkboxing}/>
                     <span className='block__decoration'>{props.title}</span>
                     <div className='block__buttons'>
                         <div disabled={true}>
@@ -77,7 +75,7 @@ const ToDoListItems = (props) => {
                         :
                         <div className='message__block'>
                             <input className='block__checkbox' disabled={true} type="checkbox" onClick={checkboxing}/>
-                            <textarea onChange={input} className='block__checkboxEditor' value={value}/>
+                            <TextareaAutosize onChange={input} className='block__checkboxEditor' value={value}/>
                             <div className='block__buttons'>
                                 <div className='buttons__icons' onClick={updateMessage}>{<FontAwesomeIcon icon={faSave}
                                                                                                           style={{width: '21px'}}/>}</div>
@@ -96,8 +94,7 @@ const ToDoListItems = (props) => {
 }
 
 const ToDoList = (props) => {
-    console.log(props)
-// console.log(window.location.pathname)
+
     let ToDoListItem = props.state.map(v => <ToDoListItems title={v.title}
                                                            key={v.id}
                                                            addNewCheked={props.addNewCheked}

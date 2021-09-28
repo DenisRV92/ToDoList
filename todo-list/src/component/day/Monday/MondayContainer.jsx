@@ -1,5 +1,4 @@
 import {connect} from "react-redux";
-// import ToDoList from "../../ToDoList/ToDoList";
 import {
     addCompletedAC,
     addMessageAC, addMessageSeverAC,
@@ -7,8 +6,7 @@ import {
     removeMessageAC,
     updateMessageAC
 } from "../../../redux/reducerMonday";
-import React, {useEffect, useState} from "react";
-import {AxiosInstance as axios} from "axios";
+import React from "react";
 import Monday from "./Monday";
 
 let mapStateToProps = (state) => {
