@@ -7,7 +7,6 @@ import {
     updateMessageAC
 } from "../../../redux/reducerSaturday";
 import {connect} from "react-redux";
-import ToDoList from "../../ToDoList/ToDoList";
 import Saturday from "./Saturday";
 
 

@@ -11,26 +11,44 @@
     text-align: center;
     font-size: 18px;
     position: absolute;
-    top:0;
-    left: 0 ;
+    top: 0;
+    left: 0;
     right: 0;
     z-index: 3;
-    /*flex-wrap:wrap;*/
+
 }
+
+@media (width: 1024px) and (max-height: 600px) {
+    .nav {
+        height: 30vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        height: 20vh;
+    }
+}
+
 @media (max-width: 468px) {
-    .menu__burger__nav{
+    .nav {
+        height: 200px;
+    }
+
+    .menu__burger__nav {
         height: 100%;
         position: absolute;
-        top:0;
-        left: 0 ;
+        top: 0;
+        left: 0;
         right: 0;
-        /*bottom: 0;*/
         z-index: 3;
     }
 }
-.menu__burger__nav a{
+
+.menu__burger__nav a {
     color: white;
 }
+
 .menu__burger__logo {
     display: none;
     width: 65px;
@@ -39,33 +57,19 @@
     color: white;
 }
 
-/*.burger__nav__logo {*/
-/*    flex: 0 0 10%;*/
-/*}*/
-
 .menu__burger__item {
     flex: 0 0 auto;
     justify-content: space-between;
     color: white;
-    /*flex-wrap:wrap;*/
 }
 
-/*.menu__burger__nav{*/
-/*    display: none;*/
-/*}*/
 .burger__nav__item {
     flex: 1 0 auto;
     width: 100%;
-    /*height: 100%;*/
     font-size: 25px;
     padding: 10px;
     background-color: #5c83cc;
     border: white 1px solid;
-
-    /*justify-content: space-between;*/
-    /*display: flex;*/
-    /*justify-content: space-between;*/
-    /*margin: 0 auto;*/
 }
 
 .nav__list {
@@ -102,31 +106,20 @@ li {
 .list__item {
     text-align: center;
     color: white;
-    /*border-bottom: #ebebeb 2px solid;*/
     background: #5c83cc;
-    /*height: 25px;*/
     font-size: 18px;
     padding: 5px 0;
-    /*border:  #fff solid;*/
 }
 
 .list__question {
-    /*display: flex;*/
     padding: 0px 2px;
-    /*height: 80px;*/
     background-size: cover;
     text-align: center;
-    /*align-items: flex-end;*/
 }
 
 .list__question img {
     width: 100%;
-    /*padding: 5px 0;*/
-    /*height: 20%;*/
     align-self: center;
-    /*align-items: flex-end;*/
-    /*z-index: 0;*/
-    /*text-align: center;*/
 }
 
 li:hover {
@@ -135,9 +128,6 @@ li:hover {
     border: 1px solid #fff;
     margin: 0px 1px;
     cursor: pointer;
-    /*font-size: 22px;*/
-    /*font-size: 55px;*/
-
 }
 
 li:hover .list__item {

@@ -6,7 +6,6 @@ import {
     removeMessageAC,
     updateMessageAC
 } from "../../../redux/reducerMonday";
-import React from "react";
 import Monday from "./Monday";
 
 let mapStateToProps = (state) => {

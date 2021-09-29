@@ -1,4 +1,5 @@
 import {connect} from "react-redux";
+// !!!
 import {
     addCompletedAC, addMessageSeverAC,
     addMessageAC,
@@ -6,6 +7,7 @@ import {
     removeMessageAC,
     updateMessageAC
 } from "../../../redux/reducerThuesday";
+// !!!
 import Thuesday from "./Thuesday";
 
 
