@@ -122,14 +122,13 @@ const ToDoList = (props) => {
         props.removeNewAllMessage()
     }
 
-    //     if (key == props.match.url.replace('/', '')) {
 
     return (
 
         <div className='list'>
 
             <div className="list__header">
-                <span>{window.location.pathname.replace('/', '')}</span>
+                <span>{window.location.hash.match(/[a-z]/gi).join('')}</span>
             </div>
             <div className='list__addtodo'>
                 <img src="" alt=""/>

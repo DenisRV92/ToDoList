@@ -2,7 +2,7 @@ import './style/App.css';
 import React from 'react'
 import Header from "./component/Header/Header";
 import NavContainer from "./component/Nav/NavContainer";
-import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
+import {HashRouter, Redirect, Route, Switch} from "react-router-dom";
 import MondayContainer from "./component/day/Monday/MondayContainer";
 import ThuesdayContainer from "./component/day/Tuesday/ThuesdayContainer";
 import WednesdayContainer from "./component/day/Wednesday/WednesdayContainer";
@@ -16,7 +16,7 @@ class App extends React.Component {
     render() {
 
         return (
-            <BrowserRouter>
+            <HashRouter>
                 <div className='wrapper'>
                     <Header/>
                     <NavContainer/>
@@ -54,7 +54,7 @@ class App extends React.Component {
 
                     </Switch>
                 </div>
-            </BrowserRouter>
+            </HashRouter>
         );
     }
 }
